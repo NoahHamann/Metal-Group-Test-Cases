@@ -1,0 +1,1413 @@
+Author: Gavante Siler
+
+ID: TC-F-001-B1-01
+BRD: FR-001-B1
+Title: Log into Website
+Summary: The objective is to verify the login functionality of the registered account. Users should be able to log into the website using the registered email and associated password. 
+
+Case: Enter valid email and valid password.
+
+Preconditions:
+Already registered on AUT.
+
+Steps:
+	1.) Navigate to the login page.
+	2.) Enter email address.
+	3.) Enter password.
+	4.) Click the “Sign in” button.
+
+Data:
+Email address: fake_email@gmail.com
+Password: Abcd1234
+
+Expected Result:
+Successful login
+
+
+ID: TC-F-001-B1-02
+BRD: FR-001-B1
+Title: Log into Website with Invalid Email
+Summary: The objective is to verify the login functionality of the registered account. Invalid emails and/or passwords should prohibit users from proceeding with a successful login.
+
+Case: Enter invalid email and valid password.
+
+Preconditions:
+Already registered on AUT.
+
+Steps:
+	1.) Navigate to the login page.
+	2.) Enter email address.
+	3.) Enter password.
+	4.) Click the “Sign in” button.
+
+Data:
+Email address: fake_emailgmail.com
+Password: Abcd1234
+
+Expected Result:
+Unsuccessful login because ‘@’ was omitted from email.
+
+
+ID: TC-F-002-B1-01
+BRD: FR-002-B1
+Title: Register for Website
+Summary: The objective is to test the registration functionality on the website with the registration form. Entering first name, last name, email, password, password confirmation, contact number, and accepting the terms and conditions should allow the buyer to register their account.
+
+Case: Complete all registration requirements.
+
+Preconditions:
+Email is not registered on AUT.
+
+Steps:
+	1.) Navigate to the registration page.
+	2.) Enter first name.
+	3.) Enter last name.
+	4.) Enter email address.
+	5.) Enter contact number.
+	6.) Enter password.
+	7.) Enter password confirmation.
+	8.) Accept terms and conditions.
+	9.) Click the “Register” button.
+
+Data:
+First name: John
+Last name: Doe
+Email address: fake_email1@gmail.com
+Contact number: 123-456-7890
+Password: Abcd1234
+Password confirmation: Abcd1234
+
+Expected Result:
+Successful registration
+
+
+ID: TC-F-002-B1-02
+BRD: FR-002-B1
+Title: Register for Website without Completing Requirements
+Summary: The objective is to test the registration functionality on the website with the registration form. Omission of any of the following listed requirements should result in an unsuccessful registration: first name, last name, email, password, password confirmation, contact number, and accepting the terms and conditions.
+
+Case: Do not accept terms and conditions.
+
+Preconditions:
+Email is not registered on AUT.
+
+Steps:
+	1.) Navigate to the registration page.
+	2.) Enter first name.
+	3.) Enter last name.
+	4.) Enter email address.
+	5.) Enter contact number.
+	6.) Enter password.
+	7.) Enter password confirmation.
+	8.) Click the “Register” button.
+
+Data:
+First name: John
+Last name: Doe
+Email address: fake_email1@gmail.com
+Contact number: 123-456-7890
+Password: Abcd1234
+Password confirmation: Abcd1234
+
+Expected Result:
+Unsuccessful registration because terms and conditions were not accepted.
+
+
+ID: TC-F-003-B1-01
+BRD:FR-003-B1
+Title: Search for Products
+Summary: The objective is to test the product search functionality for products on the website. Buyers should be able to search for products by keyword, by browsing through category/sub-category, using filters and sorting options.
+
+Case: Search for dresses.
+
+Preconditions:
+User has navigated to AUT.
+
+Steps:
+	1.) Navigate to the homepage.
+	2.) Enter search criteria in the search bar.
+	3.) Click the “Search” button.
+
+Data:
+Search criteria: Dress
+
+Expected Result:
+One or more dresses will display.
+
+
+ID: TC-F-003-B1-02
+BRD:FR-003-B1
+Title: Search for Products without Criteria
+Summary: The objective is to test the product search functionality for products on the website. Buyers should not be able to search for products by keyword if no criteria is entered in the search bar.
+
+Case: Leave search bar empty.
+
+Preconditions:
+User has navigated to AUT.
+
+Steps:
+	1.) Navigate to homepage
+	2.) Click the “Search” button.
+
+Data:
+None
+
+Expected Result:
+Zero results are found because no data was entered in the search bar.
+
+
+ID: TC-F-004-B2-01
+BRD: FR-004-B2
+Title: Access Product Detail Page
+Summary: The objective is to test the product listing functionality by navigating to the product detail page. Once the product title and image are clicked, the user should be directed to the product detail page to view more details of the product.
+
+Case: Click the image.
+
+Preconditions:
+User has navigated to AUT.
+
+Steps:
+	1.) Navigate to the homepage. 
+	2.) Click on the image.
+
+Data:
+None
+
+Expected Result:
+User is directed to the product detail page.
+
+
+ID: TC-F-004-B2-02
+BRD: FR-004-B2
+Title: Right-click to Access Product Detail Page
+Summary: The objective is to test the product listing functionality by navigating to the product detail page. Once the product title and image are clicked, the user should be directed to the product detail page to view more details of the product.
+
+Case: Right-click product title.
+
+Preconditions:
+User has navigated to AUT.
+
+Steps:
+	1.) Navigate to the homepage.
+	2.) Right-click on the product title.
+
+Data:
+None
+
+Expected Result:
+User remains on the homepage.
+
+
+ID: TC-F-007-B1-01
+BRD: FR-007-B1
+Title: Add Product to Shopping Cart
+Summary: The objective is to test the shopping cart functionality. Once the user is on the product detail page, they should be able to add the product to the shopping cart.
+
+Case: Add Product to Cart.
+
+Preconditions:
+User has navigated to AUT.
+
+Steps:
+	1.) Navigate to the product detail page.
+	2.) Enter quantity.
+	3.) Click the “Add to cart” button.
+
+Data:
+Quantity: 1
+
+Expected Result:
+Product is added to cart.
+
+
+ID: TC-F-007-B1-02
+BRD: FR-007-B1
+Title: Add to Shopping Cart with No Product Selected
+Summary: The objective is to test the shopping cart functionality. Users should only be able to add a product to cart if at least one item is selected.
+
+Case: Add “0” Products to Cart
+
+Preconditions:
+User has navigated to AUT.
+
+Steps:
+	1.) Navigate to the product detail page.
+	2.) Enter quantity.
+	3.) Click the “Add to cart” button.
+
+Data:
+Quantity: 0
+
+Expected Result:
+User receives the message “Must select at least one item to add to cart.”
+
+
+ID: TC-F-007-B4-01
+BRD: FR-007-B4
+Title: Proceed to Checkout
+Summary: The objective is to test the shopping cart functionality. Users should be able to proceed to checkout once available items have been added to the shopping cart.
+
+Case: Click Proceed to Checkout
+
+Preconditions
+User has navigated to AUT.
+User has item(s) in cart.
+
+Steps:
+	1.) Click the “Cart” button.
+	2.) Click the “Proceed to checkout” button.
+
+Data:
+None
+
+Expected Result:
+User proceeds to checkout.
+
+
+ID: TC-F-007-B4-02
+BRD: FR-007-B4
+Title: Proceed to Checkout without Clicking Button
+Summary: The objective is to test the shopping cart functionality. Users should not be able to proceed to checkout if they do not click the button.
+
+Case: Hover over Proceed to Checkout
+
+Preconditions
+User has navigated to AUT.
+User has item(s) in cart.
+
+Steps:
+	1.) Click the “Cart” button.
+	2.) Hover over the “Proceed to checkout” button.
+
+Data:
+None
+
+Expected Result:
+User remains on the Cart page.
+
+
+ID: TC-F-008-B3-01
+BRD: FR-008-B3
+TItle: Enter Billing and Shipping Address
+Summary: The objective is to test the checkout and payment functionality. Users should be required to enter billing and shipping information before proceeding to the payment page.
+
+Case:Enter Billing and Shipping Information
+
+Preconditions:
+User has navigated to AUT.
+User has item(s) in cart.
+
+Steps:
+	1.) Navigate to cart.
+	2.) Click “Proceed to checkout.”
+	3.) Enter billing name
+	4.) Enter billing address.
+	4.) Enter billing city.
+	6.) Enter billing state.
+	7.) Enter billing zip code.
+	8.) Enter shipping name.
+	9.) Enter shipping address.
+	10.) Enter shipping city.
+	11.) Enter shipping state.
+	12.) Enter shipping zip code.
+	13.) Click “Proceed to checkout.”
+
+Data:
+Billing Name: John Doe
+Billing Address: 123 Fake Lane
+Billing City: Boston
+Billing State: Massachusetts
+Billing Zip Code: 02108
+Shipping Name: Jane Doe
+Shipping Address: 321 Fake Terrace
+Shipping City: Boston
+Shipping State: Massachusetts
+Shipping Zip Code: 02109
+
+Expected Result:
+Payment page appears.
+
+
+ID: TC-F-008-B3-02
+BRD: FR-008-B3
+TItle: Omit Billing and Shipping Information
+Summary: The objective is to test the checkout and payment functionality. Users should not be able to proceed to the payment page without entering billing and shipping information.
+
+Case: Proceed to Checkout without Entering Billing and Shipping Information
+
+Preconditions:
+User has navigated to AUT.
+User has item(s) in cart.
+
+Steps:
+1.) Navigate to cart.
+2.) Click “Proceed to checkout.”
+3.) On the billing and shipping information page, leave all fields blank.
+4.) Click “Proceed to payment.”
+
+Data:
+None
+
+Expected Result:
+User receives the message “Must enter billing and shipping address before proceeding with payment.”
+
+
+ID: TC-N-001-01
+BRD: NFR-001
+Title: Scalability
+Summary: ​​The objective is to test the scalability of the website repository within its limitations. The website repository should accommodate up to 100 users concurrently.
+
+Case: 100 Users on Website Repository
+
+Preconditions:
+Users navigated to AUT.
+
+Steps:
+	1.) Navigate all users to the homepage.
+
+Data:
+Amount of Users: 100
+Expected Result:
+Website does not crash.
+
+
+ID: TC-N-001-02
+BRD: NFR-001
+Title: Scalability
+Summary: ​​The objective is to test the scalability of the website repository outside of its limitations. The website should not support more than 100 users logging on at a time. 
+
+Case: 101 Users on Website Repository
+
+Preconditions:
+Users navigated to the sign in page on AUT.
+
+Steps:
+	1.) All users enter login credentials.
+	1.) All users click the “Sign in” button.
+
+Data:
+Amount of Users: 101
+
+Expected Result:
+Website crashes.
+
+
+ID: TS-N-002-01
+BRD: NFR-002
+Title: Speed Sanity Test
+Summary: The objective is to test the load time of the web pages. Web pages should not take more than 30 seconds to load on a good-speed internet. A sanity test will be performed to measure the average load time of the web pages.
+
+Case: Occupy 100 Users
+
+Preconditions:
+Users navigate to AUT.
+
+Steps:
+	1.) Users navigate to the home page.
+	2.) Users click on a product.
+	3.) Observe page load speed.
+
+Data:
+Amount of Users: 100
+
+Expected Result:
+Product detail page will load within 30 seconds.
+
+
+ID: TS-N-002-02
+BRD: NFR-002
+Title: Speed Stress Test
+Summary: The objective is to test the load time of the web pages. Web pages should not take more than 30 seconds to load on a good-speed internet. A stress test will be performed to test the website to its maximum limit.
+
+Case: Occupy 10,000 Users
+
+Preconditions:
+Users navigate to AUT.
+
+Steps:
+	1.) Users navigate to the home page.
+	2.) Users click on a product.
+	3.) Observe page load speed.
+
+Data:
+Amount of Users: 10,000
+
+Expected Result:
+Product detail page takes longer than 30 seconds to load.
+Website crashes.
+
+
+Author: Noah Hamann
+Title: Login Test
+Case_id: TC-001
+BRD Requirement: FR-001
+Description: Tests the login functionality when user enters valid email and password
+Pre-conditions: Tester must have already created an account on invenauto.tech
+	1.) Navigate to homepage
+	2.) Click Sign in button in top right
+	3.) In box on right that says “Already Registered”, enter email (“email@adress.com”) and password (“thisismypass”)
+	4.) Click Sign-in button below the input boxes used in previous step
+Expected Result: Login is successful, User is redirected to Account Dashboard where account information can be viewed
+
+Author: Noah Hamann
+Title: Login Test
+Test Case_id: TC-002
+BRD Requirement: FR-001
+Description: Tests the login functionality when user enters invalid password and correct email
+Pre-conditions: Must have valid account already created
+	1.) Navigate to homepage
+	2.) Click Sign in button in top right
+	3.) In input boxes under “Already Registered” on the right, enter email correct format (“email@adress.com”) and a 2 character password (“12”)
+	4.) Click Sign in button below input boxes
+Expected Result: Login is unsuccessful, valid password must be entered.
+
+Author: Noah Hamann
+Title: Valid Registration Test
+Case_id: TC-003
+BRD Requirement: FR-002
+Description: Tests the registration functionality when valid data is used as input 
+Pre-conditions: Must be navigated to sign-in page and have valid email and password
+	1.) Enter mytest@gmail.com into email input box in the create account box on the left
+	2.) Click create an account
+	3.) Enter Valid data into name (“Joey”), last name(“Schmoey”), email (“tester1@gmail.com”), password(“thisismypass”) and date of birth (“10-10-2001”)
+	4.) Click Register
+Expected Result: Page navigates to account dashboard and message appears saying the account is created.
+
+Author: Noah Hamann
+Title: Registration using invalid email  
+Case_id: TC-004
+BRD Requirement: FR-002
+Description: Tests the registration functionality when email uses wrong format
+	1.) Navigate to sign-in/registration page
+	2.) Enter email in invalid form by excluding “@” sign (“sampletest.com”) in create account box (Expected result of step: not allowed to proceed, error message showing invalid email)
+	3.) Enter valid data into name(“Joe”), last name(“Schmoe”), password(‘thisismypass’) and date of birth (“10-10-2001”)
+	4.) Click Register
+Expected Result: Not allowed to create account 
+
+Author: Noah Hamann
+Title: Search Test
+Case_id: TC-005
+BRD Requirement: FR-003
+Description: Tests the search and sort functionality when user enters valid search keyword
+	1.) Navigate to homepage
+	2.) In search bar at top of page, enter “short”
+	3.) Click on the search button.
+	4.) Click Drop down menu that says “Sort By”
+	5.) Select Sort By “Price: Lowest First”
+Expected Result: Site displays a list of products in category “short” from lowest to highest price
+
+Author: Noah Hamann
+Title: Invalid Search Keyword Test
+Case_id: TC-006
+BRD Requirement: FR-003
+Description: Tests the search functionality when user enters invalid search keyword
+	1.) Navigate to homepage
+	2.) In search bar at top of page, enter “short123456” 
+	3.) Click on the search button
+Expected Result: Site displays an error message saying no items found
+
+Author: Noah Hamann
+Title: Product Listing Test
+Case_id: TC-007
+BRD Requirement: FR-004
+Description: Tests the product listing functionality
+	1.) Navigate to homepage
+	2.) Scroll Down to the “Popular” listings
+	3.) Hover over the product furthest to the right in the top row of products listed
+	4.) Click on the image 
+Expected Result: User is redirected to the full product listing
+
+Author: Noah Hamann
+Title: Product Listing Test
+Case Id: TC-008
+BRD Requirement: FR-004
+Description: Tests the product listing functionality when you click on the price of the item 
+	1.) Navigate to homepage
+	2.) Scroll Down to the “Popular” listings
+	3.) Hover over the product furthest to the right in the top row of products listed
+	4.) Click on the price of the item
+Expected Result: User is not redirected
+
+Author: Noah Hamann
+Title: Shopping Cart Test
+Case Id: TC-009
+BRD Requirement: FR-007
+Description: Tests the ability to add to shopping cart
+Pre-conditions: Cart must be empty
+	1.) Navigate to homepage
+	2.) Scroll down halfway to popular items
+	3.) Hover over the item named “Printed dress”
+	4.) Click “add to cart” button
+Expected Result: Pop up appears saying added to cart and displays a button to go back to shopping or checkout
+
+Author: Noah Hamann
+Title: Overloaded Shopping Cart Test
+Case Id: TC-010
+BRD Requirement: FR-007
+Description: Tests the ability to over-order products
+Pre-conditions: Cart must be empty
+	1.) Navigate to homepage
+	2.) Scroll down halfway to popular items
+	3.) Click on the “Blouse”
+	4.) Once redirected to product description page, input 10000 into quantity
+	5.) Click add to cart
+Expected Result: User should not be able to place more items in the cart than there are objects in stock
+
+Author: Noah Hamann
+Title: Checkout Test
+Case Id: TC-011
+BRD Requirement: FR-007
+Description: Tests the ability to checkout products in cart
+Pre-condition: “Blouse” must be added to shopping cart and user must be signed into account with valid account information
+	1.) Navigate to homepage
+	2.) Hover over Cart button in right hand corner
+	3.) Click “checkout” button (expected result of step: page redirects to cart page)
+	4.) Once redirected to cart page, scroll down and click “checkout” button
+Expected Result: Checkout process continues and prompted to either enter or edit shipping information
+
+Author: Noah Hamann
+Title: Checkout Test
+Case Id: TC- 012
+BRD Requirement: FR-007
+Description: Tests the ability to checkout products in cart
+Pre-condition: “Blouse” must be added to shopping cart and user must be signed into valid account
+	1.) Navigate to homepage
+	2.) Hover over cart button and select go to checkout
+	3.) In quantity input box, enter the number 10,000
+	4.) Select Proceed to Checkout
+Expected Result: User is unable to proceed with checkout if number of items exceeding amount in stock is in cart. 
+
+Author: Noah Hamann
+Title: Payment Test
+Case Id: TC-013
+BRD Requirement: FR-0008
+Description: Tests the ability to checkout and pay for products in cart
+Pre-conditions: Must have valid account information, “Blouse” in shopping cart, and be navigated to checkout page
+	1.) From the cart, select “proceed to checkout”
+	2.) In the sign-in box on the right, enter valid account information (“email@adress.com” and “thisismypass”) 
+	3) Enter information for street(“111 South”), city (“Dallas”), state (“Texas”), country (“United States”), postal code (“75001”), and (“999-999-9999”) for phone number.
+	4.) Click Save
+	5.) Select proceed to checkout
+Expected Result: Shipping information is saved and user can proceed with checkout and payment information
+
+Author: Noah Hamann
+Title: Payment Test
+Case Id: TC-014
+BRD Requirement: FR-0008
+Description: Tests the ability to checkout and pay for products in cart when invalid shipping information is presented
+Pre-conditions: Must have valid account information, be signed in to the account, have no shipping information saved, “Blouse” in shopping cart, and be navigated to checkout page 
+	1.) Enter shipping information: Street (“123 Fake Street”), city (“1234059”), postal code (“75001”), phone number (“999-999-9999”)
+	2.) Click Save
+Expected Result: Unable to proceed to checkout due to invalid city characters
+
+Author: Noah Hamann
+Title: Scalability Test
+Case Id: TC-015
+BRD Requirement: NFR-0001
+Description: Tests the ability of site to run with 100 concurrent users
+Pre-conditions: Must have relatively decent internet speed. Must have chrome 
+	1.) Open 100 instances of invenauto.tech in parallel on chrome
+	2.) Navigate each to homepage 
+	3.) While all pages are open, on one of the pages, search for the item “blouse” using the search bar
+	4.) Click on the item (“Blouse”) and add it to cart
+Expected Result: Website should not crash, “Blouse” is added to cart successfully, and pages should load with relative speed
+
+Author: Noah Hamann
+Title: Scalability Test
+Case Id: TC-016
+BRD Requirement: NFR-0001
+Description: Tests the ability of site to run a search of an invalid keyword with double the maximum (100) concurrent users required by the BRD
+Pre-conditions: Must have relatively decent internet speed. Must have chrome
+	1.) Open 200 tabs in parallel
+	2.) Navigate each to homepage of invenauto.tech
+	3.) On one of the open tabs, enter “short1234” into the search bar
+	4.) Click search
+Expected result: Website should not crash, should display “no search results found”
+
+Author: Noah Hamann
+Title: Speed Test
+Case Id: TC-017
+BRD Requirement: NFR-0002
+Description: Tests the speed of site when internet is operating well
+Pre-conditions: Must have good, reliable internet
+	1.) Navigate to the homepage
+	2.) Click on a clothing item for sale
+	3.) Set timer and ensure it does not take more than 30 seconds to fully load the page
+Expected Result: Page is loaded with relative speed (30 seconds or less)
+
+Author: Noah Hamann
+Title: Speed Test
+Case Id: TC-018
+BRD Requirement: NFR-0002
+Description: Tests the ability of site to load pages in 30 seconds or less when number of concurrent users exceeds maximum expected load (110 users)
+Pre-conditions: Must have good, reliable internet. Must have chrome
+	1.) Open 110 instances of invenauto.tech in chrome
+	2.) Have each instance enter “shirt” in search bar
+	3.) Click search
+Expected Result: Pages fully load search results in 30 seconds or less, may crash application
+
+
+Author: JaWuan Lang
+Title: User can login.
+Case_id: TC-F-001-000
+BRD Requirement: FR001 - B1
+Priority: 1
+Description: User can login using email and password.
+Pre-condition: User has already registered for account.
+Test:
+	1.) User clicks sign in button.   
+	2.) User enters their un & password but is not registered.              
+Expected Results: 
+Successful login
+	
+Author: JaWuan Lang
+Title: User can login.
+Case_id: TC-F-001-001
+BRD Requirement: FR001 - B1
+Priority: 1
+Description: User unable to login using email and password.
+Test Steps:
+	1.) User clicks sign in button.
+	2.) User enters their email & wrong password. 
+Expected Results: 
+User should be unable to login
+
+Author: JaWuan Lang
+Case_id: TC-F-002-000
+BRD Requirement: FR002 - B1
+Priority: 1
+Title: Buyer Registers
+Description: Buyer can register using their first name, last name, email, contact, password and accept terms and conditions.
+
+Pre-condition: User does not already have an account.
+Test Steps:
+	1.) User goes to the registration page.
+	2.) User enters first name, last name, email, contact number, password, confirmation password, and accepts terms and conditions.
+Expected Results: 
+Successful account created
+
+Author: JaWuan Lang
+Case_id: TC-F-002-001
+BRD Requirement: FR002 - B1
+Priority: 1
+Title: Buyer not Registered
+Description: Buyer cannot register using their first name, last name, email, contact, with invalid password and accept terms and conditions.
+Test Steps:
+	1.) User goes to the registration page.
+	2.) User enters all information but enters a four key password.
+Expected Results: 
+passwd in invalid
+
+Author: JaWuan
+Case_id: TC-F-003-000
+Title: Buyer can filter products
+BRD Requirement: FR003 - B1
+Priority: 1
+Description: Buyers will be able to search the products by keyword, by browsing through category/sub-category, using filters and sorting options.
+Test Steps:
+	1.) Buyer searches keyword “shirts”
+	2.) Buyer filters size “s”..
+	3.) Buyer sorts “lowest price-highest price” 
+Expected Results: 
+Page loads all size “s” shirts from lowest price to highest price in stock. 
+
+Author: JaWuan
+Case_id: TC-F-003-001
+Title: Buyer can filter products
+BRD Requirement: FR003 - B1
+Priority: 1
+Description: Buyers will not be able to search the products by keyword, by browsing through category/sub-category, using filters and sorting options if the keyword is invalid..
+Test Steps:
+	1.) Buyer searches keyword dogs.
+Expected Results:
+No results were found for your search “dogs”
+
+Author: JaWuan Lang
+Case_id: TC-F-004-000
+Title:  User can view detailed product
+BRD Requirement: FR004 - B2
+Priority: 1
+Description: By clicking on product title and image, users will be able to navigate on product detail page to view more details of the product.
+Test Steps:
+	1.) User navigates to a product.
+	2.) User clicks on the image of the product(graphic t).
+Expected Results:
+User is taken to the page with more details on the product(graphic t) .
+
+Author: JaWuan Lang
+Case_id: TC-F-004-001
+Title:  User can view detailed product
+BRD Requirement: FR004 - B2
+Priority: 1
+Description: By clicking on product title and image, users will be able to navigate on product detail page to view more details of the product.
+Test Steps:
+	1.) User navigates to a product.
+	2.) User clicks on the add to cart.
+Expected Results:
+User stays on the page and is not redirected to the detailed view of the product(graphic t).
+
+Author: JaWuan Lang
+Case_id: TC-F-005-000
+Title: Product is added to cart from product detail page
+BRD Requirement: FR007 - B1 
+Priority: 1
+Description: All products can be added into a shopping cart from the product detail page.
+Test Steps:
+	1.) User navigates to the product(graphic t) detail page.
+	2.) User clicks add to the shopping cart on the page. 
+Expected Results:
+product(graphic t) is sent to the shopping cart.
+
+Author: JaWuan Lang
+Case_id: TC-F-005-001
+Title: Product is added to cart from product detail page
+BRD Requirement: FR007 - B1 
+Priority: 1
+Description: All products can be added into a shopping cart from the product detail page.
+Test Steps:
+	1.) User navigates to the product(graphic t) detail page.
+	2.) User picks a quantity of 350. 
+	3.) User clicks adds product(graphic t) to the cart.
+Expected Results:
+User  enters invalid quantity..
+
+Author: JaWuan Lang
+Case_id: TC-F-006-000
+Title: User can checkout item in shopping cart
+BRD Requirement: FR007 -  B4
+Priority: 1
+Description: User will be able to proceed for checkout of any items/ all items available in the shopping cart.
+Pre-condition: User is registered.
+Test Steps:
+	1.) User adds product(graphic t) to the cart
+	2.) User clicks on the checkout page.
+Expected Results:
+User is able to check out items in the cart.
+
+Author: JaWuan Lang
+Case_id: TC-F-006-001
+Title: User can checkout item in shopping cart
+BRD Requirement: FR007 -  B4
+Priority: 1
+Description: User will be able to proceed for checkout of any items/ all items available in the shopping cart.
+Test Steps:
+	1.) User picks a quantity of 350 product(graphic t) to the shopping cart. 
+	2.) User clicks on the checkout page.
+Expected Results:
+Invalid quantity selected.
+
+Author: JaWuan Lang
+Case_id: TC-F-007-000
+Title: Buyer enters purchase credentials
+BRD Requirement: FR008 - B3
+Priority: 1
+Description: Buyer will be required to enter billing and shipping address before checkout and payment.
+Test Steps: 
+	1.) User proceeds to checkout.
+	2.) User is prompted to enter the billing and shipping address.
+Expected Results:
+User is able to enter billing and shipping address before checking out.
+
+Author: JaWuan Lang
+Case_id: TC-F-007-001
+Title: Buyer enters purchase credentials
+BRD Requirement: FR008 - B3
+Priority: 1
+Description: Buyer will be required to enter billing and shipping address before checkout and payment.
+Test Steps:
+	1.) User proceeds to checkout.
+	2.) User tries to checkout without entering the billing and shipping address.
+Expected Results:
+User is prompted to enter billing and shipping address when attempting to checkout.
+
+Author: JaWuan Lang
+Case_id: TC-F-008-000
+Title: The website can handles 100 users
+BRD Requirement: NFR001
+Description: The website repository shall accommodate up to 100 users concurrently.
+Test Steps: 
+	1.) 100 users enter the website simultaneously.
+Expected Results: Website continues running at normal rate.
+
+Author: JaWuan Lang
+Case_id: TC-F-008-001
+Title: The website can handles 100 users
+BRD Requirement: NFR001
+Description: The website repository shall accommodate up to 100 users concurrently.
+Test Steps:
+	1.) 500 users enter the website simultaneously.
+Expected Result: 
+Website runs at a significantly slower speed.
+
+Author: JaWuan Lang
+Case_id: TC-NF-009-000
+Title: Load webpages
+BRD Requirement: NFR002
+Description: Web pages should load within 30 seconds of interaction with features on the page.
+Test Steps: 
+	1.) User clicks on feature
+	2.) User waits
+Expected Results:
+Page loads within 10 seconds.
+
+Author: JaWuan Lang
+Case_id: TC-NF-009-001
+Title: Load webpages
+BRD Requirement: NFR002
+Description: Web pages should load within 30 seconds of interaction with features on the page.
+Pre-condition: User is running high RAM.
+Test Steps: 
+	1.) User clicks on feature 
+	2.) User waits
+Expected Results:
+Page fails to load. 
+
+
+Web:invenauto.tech
+Author:Javid
+Date:4/29/2022
+Preconditions:
+1.Navigate to webSite "Home page" 
+2.user have valid email id and pwd
+
+
+    ID:FR001 - B1
+    Title:Login
+    Summary: User will be able to login into the website using the email and password.
+
+
+    Test: Can user log in with valid username and valid password;
+
+
+           Steps:  
+           1.Navigate to sign in page                                     Test Data:
+           2.enter valid user name                                         email_id:invenauto@gmail.com 
+           3.enter valid password                                           pwd:12345
+           4.click sign in     
+           expected result:User must successfully login to the web page
+           
+           
+ 
+    
+
+     Test: Can user log in by entering invalid username and valid password;
+
+           Steps:
+           1.Navigate to sign in page                                     Test Data:
+           2.enter inValid user name                                       email_id:xxxxxx@gmail.com 
+           2.enter valid password                                            pwd:12345
+           3.click sign in    
+           expected result:Proper error must be displayed and prompt to enter login again
+           
+          
+    
+    4.Test: Can user log in with a valid username and inValid password;
+
+           Steps:  
+           1.Navigate to sign in page                                     Test Data:
+           2.enter valid user name                                          email_id:invenauto@gmail.com
+           3.enter inValid password                                         pwd:xxxxx
+           4.click sign in    
+           expected result:Proper error must be displayed and prompt to enter login again
+           
+           
+     
+    3. Test: Can user log in   with a inValid username and inValid password is entered;
+
+           Steps:  
+           1.Navigate to sign in page                                     Test Data:
+           2.enter inValid user name                                      email_id:xxxxxx@gmail.com
+           3.enter inValid password                                        pwd:xxxxx
+           4.click sign in    
+           expected result:Proper error must be displayed and prompt to enter login again
+           
+           
+-------------------------------------------------------------------------------------------------------------
+
+Author:Javid
+Date:4/29/2022
+
+ID:FR002 - B1
+Title:Registration 
+Preconditions:
+Navigate to webSite "Home page".
+Note: "Contact Number","Confirm Password","Accept term and candition" fields are not exist.
+
+Summary: User will be able to registered on website with simple registration form with: First Name, Last Name, Email Id , Contact Number, Password
+Required fields are:Email Id,Name,Last Name,Password
+
+    1. Test: Can user register with valid First Name,valid Last Name,valid Email Id ,valid Contact Number,valid Password
+Required fields are:Email Id,Name,Last Name,Password
+
+
+           Steps:
+           1.Navigate to sign in page
+           2.enter valid email id
+           3.click to create account                    Test Data:
+           4.click Mr.                                          First Name:Jacque 
+           5.enter first name                              Last Name:Fresco
+           6.enter last name                              email:invenauto@gmail.com
+           7.enter email                                     pwd:12345
+           8.enter password                              DOB:03/13/1916
+           9.DOB
+           10.click to register     
+
+           expected result:Users should be registered successfully
+           expected result: A successful registration message should show.
+           expected result:Mail should send to the user
+           
+ 
+     2. Test: Verify response with empty Required fields.
+Required fields are:Email Id,Name,Last Name,Password
+       
+
+           Steps:
+           1.Navigate to sign in page
+           2.enter valid email id
+           3.click to create account
+           4.Do not enter any value in the field.  
+           5.click to register                                                                
+                 
+           expected result: It should show a mandatory symbol (*) on mandatory fields.
+
+
+    3. Test: Verify response with inValid First Name,valid Last Name,valid Email Id ,valid Password.
+Required fields are:Email Id,Name,Last Name,Password
+       
+
+           Steps:
+           1.Navigate to sign in page
+           2.enter valid email id
+           3.click to create account                               Test Data:
+           4.click Mr.                                                      First Name:%3$@! 
+           5.enter in Valid first name                              Last Name:Fresco
+           6.enter last name                                           email:invenauto@gmail.com
+           7.enter email                                                  pwd:12345
+           8.enter password                                           DOB:03/13/1916
+           9.DOB
+           10.click to register     
+           expected result: It should show the validation message for valid first name
+         
+           
+ 4. Test: Verify response with validFirst Name,inValid Last Name,valid Email Id ,valid Password.
+Required fields are:Email Id,Name,Last Name,Password
+       
+
+           Steps:
+           1.Navigate to sign in page
+           2.enter valid email id
+           3.click to create account                               Test Data:
+           4.click Mr.                                                      First Name:Jacque 
+           5.enter first name                                          Last Name:%3$@! 
+           6.enter inValid last name                               email:invenauto@gmail.com
+           7.enter email                                                  pwd:12345
+           8.enter password                                           DOB:03/13/1916
+           9.DOB
+           10.click to register     
+           expected result: It should show the validation message for valid first name
+
+
+               
+           
+
+    4. Test: Verify response with valid First Name,valid Last Name,inValid Email Id ,valid Password.
+Required fields are:Email Id,First Name,Last Name,Password
+       
+
+           Steps:
+           1.Navigate to sign in page
+           2.enter valid email id
+           3.click to create account                               Test Data:
+           4.click Mr.                                                      First Name:Jacque 
+           5.enter in Valid first name                              Last Name:%3$@! 
+           6.enter last name                                           email:invenautoAtgmail.com
+           7.enter inValid email                                      pwd:12345
+           8.enter password                                           DOB:03/13/1916
+           9.DOB
+           10.click to register     
+           expected result: It should show the validation message for valid email ‘@’
+
+          
+   5. Test: Verify response with valid First Name,valid Last Name,valid Email Id ,inValid Password.
+Required fields are:Email Id,First Name,Last Name,Password
+       
+
+           Steps:
+           1.Navigate to sign in page
+           2.enter valid email id
+           3.click to create account                                                         Test Data:
+           4.click Mr.                                                                                First Name:Jacque 
+           5.enter first name                                                                    Last Name:%3$@! 
+           6.enter last name                                                                    email:invenautoAtgmail.com
+           7.enter valid email                                                                   pwd:12345
+           5.Enter password value which is alphanumeric but less than 5 charachters long               DOB:03/13/1916
+           9.DOB
+           10.click to register     
+           expected result: It should show the validation message for valid email ‘@’
+        
+           
+
+   
+           
+           
+
+
+               
+
+              
+           
+--------------------------------------------------------------------------------------------------------
+Author:Javid
+Date:4/29/2022
+
+ID:FR003 - B1
+Title:Product Search
+Preconditions:
+Navigate to webSite "Home page".
+Summary:USer will be able to  search  the  products  by  keyword,  by  browsing  through
+category/sub-category, using filters and sorting options
+
+
+
+
+    1. Test: Can user search in website with valid keyWord
+
+           Steps:                                                                     Test Data:
+           1.enter valid keyword on searchBox                              keyword:shoes 
+           2.click to search button                      
+           expected result: site have to show how many results have been found.  
+
+    2. Test: Can user search in website with inValid keyWord
+
+           Steps:                                                                     Test Data:
+           1.enter inValid keyword on searchBox                    keyword:”*!*” 
+           2.click to search button                      
+           expected result:site have to show message “No results were found for your search "*!*" “
+
+   3. Test: Can user search in website with empty keyWord
+
+           Steps:                                                                     Test Data:
+           1.leave empty  searchBox                                      keyword:
+           2.click to search button                      
+           expected result: site have to show message “Please enter a search keyword”. 
+                          
+           
+    4. Test: Can user click For each category "women","Dresses","T-shirts" sections ;
+
+           Steps:                                                                    
+           1.click to “women”  category                                   
+             expected result:  site have to navigate to “women” category page
+           2.click to "Dresses"  category                                   
+             expected result:  site have to navigate to "Dresses" category page            
+           3.click to "T-shirts"  category                                   
+             expected result:  site have to navigate to "T-shirts" category page
+           
+     5. Test: Can user search in website by using any keyWord and use sortBy options “--”,”Price:Lowest First”,Price:Highest First”,”Product name A-Z”,”Product name Z-A”,”In-Stock”,”Reference:Lowest First”,”Reference:Highest First”.
+Note:Sort each category and verify the response by using the same steps below.
+
+
+           Steps:                                                                     Test Data:
+           1.enter valid keyword on searchBox                       keyword:shoes 
+           2.click to search button  
+           3.click to sortBy
+           4.choose “--”      
+           expected result: site have to show how many results have been found.        
+           
+            
+          
+           
+    
+
+             
+
+   
+
+--------------------------------------------------------------------------------------------------------
+Author:Javid
+Date:4/29/2022
+
+ID:FR004 - B2
+Title:Product Search
+Preconditions:
+Navigate to webSite "Home page".
+Summary:User will able to  click on product title and image,and navigate on product detail page to view more details of the product
+
+
+
+
+    1. Test: Can user click  to product image
+        Note:There are images by category "Faded Short Sleeves T-shirt","Blouse","Printed Dress","Printed Summer Dress".Click on each image to verify the response from all to follow steps below.
+
+           Steps:                                                                     
+           1.click   "Faded Short Sleeves T-shirt"                                                                   
+            expected result: site have to show product detail page to view more details of the product.                   
+            
+
+
+
+
+
+ 
+           
+
+   --------------------------------------------------------------------------------------------------------
+
+Author:Javid
+Date:4/29/2022
+ID:FR007 - B1
+Title:Shopping cart
+Preconditions:
+Navigate to webSite "Home page".
+Summary:User will be able to   add the product  into the shopping cart from the product detail page
+
+
+
+
+    1. Test: Can user  add 1 quantity into shopping cart from the product detail page
+        
+
+           Steps:                                                                     
+          1.click  to image  "Faded Short Sleeves T-shirt" 
+           2.choose quantity 1
+           3.choose size “S”
+           4.choose color “Orange”  
+           5.click add to cart                                                               
+            expected result: "site supposed to show Product successfully added to your shopping cart"
+
+
+ 2. Test: Can user add into shopping cart multiple-quantity of same items from the product detail page
+Note:Be sure to test choosing all sizes “S”,”M”,”L” and all colors  by following same steps below
+
+
+        
+
+           Steps:                                                                     
+           1.click  to image  "Faded Short Sleeves T-shirt" 
+           2.choose quantity 5
+           3.choose “S” size 
+           4.choose color “Orange” 
+           5.click add to cart                                                             
+            expected result: "site supposed to show Product successfully added to your shopping cart"
+
+
+
+
+
+                     
+    
+
+   
+         
+
+ 3. Test: Can user add 0 quantity into shopping cart from the product detail page
+        Note:Be sure to test choosing all sizes “S”,”M”,”L” and all colors  by following same steps below
+
+           Steps:                                                                     
+          1.click  to image  "Faded Short Sleeves T-shirt" 
+           2.choose quantity 1
+           3.choose size “S”
+           4.choose color “Orange”   
+           5.click add to cart                                                              
+            expected result: "site supposed to show Product successfully added to your shopping cart"
+
+
+        
+
+    
+         
+
+       
+ 
+  
+         
+
+
+   --------------------------------------------------------------------------------------------------------
+
+Author:Javid
+Date:4/29/2022
+ID:FR007 - B4
+Title:Shopping cart
+Preconditions:
+Navigate to webSite "Home page".
+Summary:User will be able to  proceed for checkout of any items/ all items available in shopping cart
+
+
+
+1. Test: Can user add 1 quantity item into shopping cart and proceed for checkout 
+        
+
+           Steps:                                                                     
+          1.click  to image  "Faded Short Sleeves T-shirt" 
+           2.choose quantity 1
+           3.choose size “S”
+           4.choose color “Orange”  
+           5.click add to Cart  
+           6.click to proceed checkout                                                             
+            expected result: "suppouse to navigate to proceed checkout page "
+expected result: "site supposed to show the message  Product successfully added to your shopping cart"
+
+
+
+2. Test: Can user add multiple quantity item into shopping cart and proceed for checkout 
+
+
+
+           Steps:                                                                     
+           1.click  to image  "Faded Short Sleeves T-shirt" 
+           2.choose quantity 5
+           3.choose “S” size 
+           4.choose color “Orange” 
+           5.click add to Cart  
+           6.click to proceed checkout                                                              
+            expected result:  after click to “add to cart” button suppose to show the message “Product successfully added to your shopping cart"
+After click to “proceed chekout” button suppose to navigate to “SHOPPING-CART SUMMARY"
+   
+         
+
+   --------------------------------------------------------------------------------------------------------
+
+Author:Javid
+Date:4/29/2022
+ID:FR008 - B3
+Title:Checkout & Payment
+Preconditions:
+Navigate to webSite "Home page".
+Summary:User will be able to  enter billing and shipping address before checkout and payment
+
+
+
+                            
+                            
+
+
+
+
+    1. Test: Can user add one item to the cart and enter billing and shipping address before checkout. ;
+
+         Steps:                                                                  Test Data:
+         1.click to image                                                            valid email id:invenauto@gmail.com
+         2.choose quantity 1                                                     pwd:12345
+         3.click to "Add to Cart"                                                 address:11 Merrimack st
+                                                                                             city:Boston
+         4.click proceed check out                                            country:USA
+         5.click proceed check out and go page sign in            state:MA
+         6.enter valid email id                                                   zipcode:02155
+         7.enter valid password                                                phone:9998886677
+         8.click sign in and navigate to your address page
+         9.enter address
+         10.enter city
+         11.choose state
+         12.enter zipCode
+         13.choose country
+         14.enter phone number
+         15.click to save
+         16.click to proceed checkout
+         17.click to agree to the terms
+         18.click to proceed checkout
+         19.click to Bank payment method
+         20.click to I confirm order
+expected  result(Step3):  suppose to show a message “Product successfully added to your shopping cart"
+         expected  result(Step5): suppose to navigate "SHOPPING-CART SUMMARY" page
+         expected  result(Step8): suppose to navigate "YOUR BILLING ADDRESS" page
+         expected  result(Step16): suppose to navigate "shipping" page
+         expected  result(Step18): suppose to navigate "PLEASE CHOOSE YOUR PAYMENT METHOD" page
+         expected  result(Step19):suppose to navigate "BANK-WIRE PAYMENT" page
+         expected  result(Step20):suppose to navigate "Your order on Clothes Carnival is completed"  page
+        
+  
+
+  
+    2. Can user add one item to the cart and enter billing and shipping address before checkout,but not click to agree to the terms ;
+
+          Steps:                                                                  Test Data:
+         1.click to image                                                            valid email id:invenauto@gmail.com
+         2.choose quantity 1                                                     pwd:12345
+         3.click to "Add to Cart"                                                 address:11 Merrimack st
+                                                                                             city:Boston
+         4.click proceed check out                                            country:USA
+         5.click proceed check out and go page sign in            state:MA
+         6.enter valid email id                                                   zipcode:02155
+         7.enter valid password                                                phone:9998886677
+         8.click sign in and navigate to your address page
+         9.enter address
+         10.enter city
+         11.choose state
+         12.enter zipCode
+         13.choose country
+         14.enter phone number
+         15.click to save
+         16.click to proceed checkout
+         
+
+         expected  result(Step3):  shows message “Product successfully added to your shopping cart"
+         expected  result(Step5): navigates to "SHOPPING-CART SUMMARY" page
+         expected  result(Step8): navigates to "YOUR BILLING ADDRESS" page
+         expected  result(Step16): shows message "You must agree to the terms of service before continuing"
+
+   --------------------------------------------------------------------------------------------------------
+Author:Javid
+Date:4/29/2022
+ID:NFR-001
+Title:Scability
+
+Summary: The website repository shall accommodate up to 100 users concurrent
+                         
+                     
+    1. Test: Can website able to work without any problem  if sign in to the website 100 different email addresses ;
+
+          Test Steps:                              Test Data:
+           1.enter valid user name          email:get from csv file 
+           2.enter valid password           pwd:get from csv file
+           3.click sign in     
+           Expected result:successed
+
+     2. Test: Can website able to work without any problem  if click to search button  repeatedly  100 users same time ;
+
+       Test Steps:                                  Test Data:
+           1.Navigate to website              email:get from csv file 
+           2.click to search button           pwd:get from csv file
+           Expected result:successed
+
+     3. Test: Can website work without any problem if search button is clicked repeatedly more than 100 times with 120 users at the same time ;
+
+          Test Steps:                              Test Data:
+           1.Navigate to website              email:get from csv file 
+           2.click to search button           pwd:get from csv file
+              
+           Expected result:website supposed to work with low speed
+
+
+       3. Test: Can website work without any problem  if click to search button  repeatedly  more than 200 same time ;
+
+          Test Steps:                              Test Data:
+           1.enter valid user name          
+           2.enter valid password           
+           3.click sign in     
+           Expected result: the server runs out 
+   --------------------------------------------------------------------------------------------------------
+
+ID:NFR-002
+Title:Speed
+Summary: web pages should not take more than 30 seconds to load in good speed of inter 
+                            
+                            
+
+
+
+
+    1. Test: Can the home page load in less than 30 seconds;
+
+          1.Go to webSite "invenauto.tech"
+          2.Verify Title
+          3.Expected:Timeout<30(seconds)
+         
+    
+
+
+
+
+
+
+
+
