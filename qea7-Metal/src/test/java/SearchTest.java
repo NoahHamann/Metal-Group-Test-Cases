@@ -61,5 +61,4 @@ public class SearchTest {
 	public void closeDriver() throws InterruptedException {
 		driver.quit();
 	}
-  
 }
