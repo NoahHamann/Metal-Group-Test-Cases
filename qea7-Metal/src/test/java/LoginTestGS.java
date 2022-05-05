@@ -17,20 +17,21 @@ public class LoginTestGS {
 	WebDriverWait wait;
 
 	@BeforeMethod
-	public void beforeMethod() {URL driverPathForWindows = getClass().getResource("windows/chromedriver.exe");
-	URL driverPathPathForMac = getClass().getResource("mac/chromedriver");
-	String os = System.getProperty("os.name").toLowerCase();
+	public void beforeMethod() {
+		URL driverPathForWindows = getClass().getResource("windows/chromedriver.exe");
+		URL driverPathPathForMac = getClass().getResource("mac/chromedriver");
+		String os = System.getProperty("os.name").toLowerCase();
 
-	if (os.contains("mac")) {
-		System.setProperty("webdriver.chrome.driver", driverPathPathForMac.getPath());
-	}
-	if (os.contains("windows")) {
-		System.setProperty("webdriver.chrome.driver", driverPathForWindows.getPath());
-	}
-	driver = new ChromeDriver();
-	//driver.navigate().to("http://invenauto.tech/index.php");
+		if (os.contains("mac")) {
+			System.setProperty("webdriver.chrome.driver", driverPathPathForMac.getPath());
+		}
+		if (os.contains("windows")) {
+			System.setProperty("webdriver.chrome.driver", driverPathForWindows.getPath());
+		}
+		driver = new ChromeDriver();
+		// driver.navigate().to("http://invenauto.tech/index.php");
 
-	assertFalse(driver == null, "the webdriver should be initialized");
+		assertFalse(driver == null, "the webdriver should be initialized");
 
 	}
 
