@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 public class SearchTest {
 	WebDriver driver;
-
+	
 	@BeforeMethod
 	public void beforeMethod() {
 		URL driverPathForWindows = getClass().getResource("windows/chromedriver.exe");
