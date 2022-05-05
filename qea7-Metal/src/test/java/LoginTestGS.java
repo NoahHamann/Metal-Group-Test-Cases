@@ -6,24 +6,31 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LoginTestGS {
-	private WebDriver driver;
+	WebDriver driver;
+	WebDriverWait wait;
 
 	@BeforeMethod
-	public void beforeMethod() {
+	public void beforeMethod() {URL driverPathForWindows = getClass().getResource("windows/chromedriver.exe");
+	URL driverPathPathForMac = getClass().getResource("mac/chromedriver");
+	String os = System.getProperty("os.name").toLowerCase();
 
-		URL driverPath = getClass().getResource("Mac/chromedriver");
+	if (os.contains("mac")) {
+		System.setProperty("webdriver.chrome.driver", driverPathPathForMac.getPath());
+	}
+	if (os.contains("windows")) {
+		System.setProperty("webdriver.chrome.driver", driverPathForWindows.getPath());
+	}
+	driver = new ChromeDriver();
+	//driver.navigate().to("http://invenauto.tech/index.php");
 
-		System.setProperty("webdriver.chrome.driver", driverPath.getPath());
-
-		driver = new ChromeDriver();
-
-		assertFalse(driver == null, "the webdriver should be initialized");
+	assertFalse(driver == null, "the webdriver should be initialized");
 
 	}
 

@@ -12,11 +12,6 @@ public class SanityTests {
 	@BeforeMethod
 	public void beforeMethod() {
 
-	}
-
-	@Test
-	public void canLaunchWebdriver() {
-
 		URL driverPath = getClass().getResource("Mac/chromedriver");
 
 		System.setProperty("webdriver.chrome.driver", driverPath.getPath());
@@ -26,6 +21,11 @@ public class SanityTests {
 		WebDriver driver = new ChromeDriver();
 
 		assertFalse(driver == null, "the webdriver should be initialized");
+
+	}
+
+	@Test
+	public void canLaunchWebdriver() {
 	}
 
 }
