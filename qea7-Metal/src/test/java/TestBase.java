@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 
 public abstract class TestBase {
 
-	private ChromeDriver driver;
+	public ChromeDriver driver;
 
 	@BeforeMethod
 	public void launchDriver() {
