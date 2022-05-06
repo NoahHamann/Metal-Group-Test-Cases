@@ -25,11 +25,13 @@ public abstract class TestBase {
 
 	}
 
-
 	@AfterMethod
-	public void afterMethod() {
-	}
+	public void cleanUp() {
 
+		if (this.driver != null) {
+			this.driver.quit();
+		}
+	}
 
 	public ChromeDriver getDriver() {
 		return driver;
