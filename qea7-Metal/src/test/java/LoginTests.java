@@ -4,7 +4,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LoginTestGS extends TestBase {
+public class LoginTests extends TestBase {
 	WebDriverWait wait;
 
 	@Test
