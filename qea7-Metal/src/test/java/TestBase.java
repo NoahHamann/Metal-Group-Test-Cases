@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 
 public abstract class TestBase {
 
-	public ChromeDriver driver;
+	private ChromeDriver driver;
 
 	@BeforeMethod
 	public void launchDriver() {
@@ -21,9 +21,10 @@ public abstract class TestBase {
 			System.setProperty("webdriver.chrome.driver", driverPathForWindows.getPath());
 		}
 		this.driver = new ChromeDriver();
-		// driver.navigate().to("http://invenauto.tech/index.php");
+		 
 
 	}
+	
 
 	@AfterMethod
 	public void cleanUp() {
