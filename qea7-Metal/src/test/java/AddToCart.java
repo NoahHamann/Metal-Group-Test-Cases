@@ -23,7 +23,8 @@ public class AddToCart {
 
 		if (os.contains("mac")) {
 			System.setProperty("webdriver.chrome.driver", driverPathPathForMac.getPath());
-		} else {
+		}
+		if (os.contains("windows")) {
 			System.setProperty("webdriver.chrome.driver", driverPathForWindows.getPath());
 		}
 		driver = new ChromeDriver();
@@ -34,27 +35,27 @@ public class AddToCart {
 	}
 
 	@Test
-	public void canUserAddONeQuantityItemIntoShoppingCart()  {
+	public void canAddMultipleQuantityItemIntoShoppingCart() {
 		String expectedText = "Product successfully added to your shopping cart";
-		String elementImage = "[class*= 'first-item-of-mobile-line'] [class='right-block'] [title='Faded Short Sleeves T-shirt']";
+		String imageElement = "[class*= 'first-item-of-mobile-line'] [class='right-block'] [title='Faded Short Sleeves T-shirt']";
 
-		WebElement clickImage = driver.findElement(By.cssSelector(elementImage));
-		clickImage.click();
-		WebElement quantity = driver.findElement(By.id("quantity_wanted"));
-		quantity.clear();
-		quantity.sendKeys("5");
+		WebElement clickToImage = driver.findElement(By.cssSelector(imageElement));
+		clickToImage.click();
+		WebElement setQuantity = driver.findElement(By.id("quantity_wanted"));
+		setQuantity.clear();
+		setQuantity.sendKeys("5");
 		WebElement addToCart = driver.findElement(By.id("add_to_cart"));
 		addToCart.click();
-		WebElement text = driver.findElement(By.className("title"));
+		WebElement getResultText = driver.findElement(By.xpath("//span[normalize-space()='Product successfully added to your shopping cart']"));
 		wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.textToBePresentInElement(text, expectedText));
-		String actualText = text.getText();
+		wait.until(ExpectedConditions.textToBePresentInElement(getResultText, expectedText));
+		String actualText = getResultText.getText();
 
-		assertEquals(actualText, expectedText);
+		assertEquals(actualText, expectedText, "not match with expected result");
 	}
 
 	@AfterMethod
-	public void closeDriver() throws InterruptedException {
+	public void closeDriver() {
 		driver.quit();
 	}
 }
