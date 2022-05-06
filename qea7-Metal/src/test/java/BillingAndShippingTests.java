@@ -63,6 +63,7 @@ public class BillingAndShippingTests extends TestBase {
 			addressTitle.clear();
 			addressTitle.sendKeys("Home");
 			saveAddress.click();
+
 		} else {
 
 			WebElement processAddress = this.getDriver().findElement(By.name("processAddress"));
