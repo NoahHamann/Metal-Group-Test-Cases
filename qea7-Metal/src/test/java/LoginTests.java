@@ -4,6 +4,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import foundation.TestBase;
+
 public class LoginTests extends TestBase {
 	WebDriverWait wait;
 
@@ -11,7 +13,10 @@ public class LoginTests extends TestBase {
 	public void canLogIntoAccount() {
 
 		this.getDriver().manage().window().maximize();
-		this.getDriver().get("http://invenauto.tech/index.php?controller=authentication&back=my-account");
+		this.getDriver().get("http://invenauto.tech/index.php");
+
+		WebElement signIn = this.getDriver().findElement(By.linkText("Sign in"));
+		signIn.click();
 
 		WebElement username = this.getDriver().findElement(By.id("email"));
 		WebElement password = this.getDriver().findElement(By.id("passwd"));

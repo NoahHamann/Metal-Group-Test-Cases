@@ -1,3 +1,5 @@
+package foundation;
+
 import java.net.URL;
 
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,10 +23,10 @@ public abstract class TestBase {
 			System.setProperty("webdriver.chrome.driver", driverPathForWindows.getPath());
 		}
 		this.driver = new ChromeDriver();
-		 
+
 
 	}
-	
+
 
 	@AfterMethod
 	public void cleanUp() {

@@ -6,11 +6,13 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import foundation.TestBase;
+
 public class BillingAndShippingTests extends TestBase {
 	@Test
 	public void canEnterBillingAndShippingInformationBeforePayment() {
 
-		this.getDriver().manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		this.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		this.getDriver().manage().window().maximize();
 		this.getDriver().get("http://invenauto.tech/index.php");
 
