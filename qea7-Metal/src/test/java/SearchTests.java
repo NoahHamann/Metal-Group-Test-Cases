@@ -31,7 +31,6 @@ public class SearchTests extends TestBase {
 	  dropDownSort.selectByValue("price:asc");
 	  String results = this.getDriver().findElement(By.cssSelector("span[class='heading-counter']")).getText();	
 	  
-	  assertEquals(expectedResultsText, results);
-	  
+	  assertEquals(expectedResultsText, results);  
   }
 }
