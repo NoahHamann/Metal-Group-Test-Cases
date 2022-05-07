@@ -21,7 +21,7 @@ public abstract class TestBase {
 			System.setProperty("webdriver.chrome.driver", driverPathForWindows.getPath());
 		}
 		this.driver = new ChromeDriver();
-		// driver.navigate().to("http://invenauto.tech/index.php");
+		
 
 	}
 
