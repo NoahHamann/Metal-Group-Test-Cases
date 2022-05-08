@@ -18,14 +18,12 @@ public class AddToCartTest extends TestBase {
 	WebDriver driver;
 	WebDriverWait wait;
 
-	
-
 	@Test
 	public void canAddMultipleQuantityItemIntoShoppingCart() {
 		String expectedText = "Product successfully added to your shopping cart";
 		String imageElement = "[class*= 'first-item-of-mobile-line'] [class='right-block'] [title='Faded Short Sleeves T-shirt']";
 
-	this.getDriver().navigate().to("http://invenauto.tech/index.php");
+		this.getDriver().navigate().to("http://invenauto.tech/index.php");
 		WebElement clickToImage = this.getDriver().findElement(By.cssSelector(imageElement));
 		clickToImage.click();
 		WebElement setQuantity = this.getDriver().findElement(By.id("quantity_wanted"));
@@ -33,7 +31,8 @@ public class AddToCartTest extends TestBase {
 		setQuantity.sendKeys("5");
 		WebElement addToCart = this.getDriver().findElement(By.id("add_to_cart"));
 		addToCart.click();
-		WebElement getResultText = this.getDriver().findElement(By.xpath("//span[normalize-space()='Product successfully added to your shopping cart']"));
+		WebElement getResultText = this.getDriver()
+				.findElement(By.xpath("//span[normalize-space()='Product successfully added to your shopping cart']"));
 		wait = new WebDriverWait(this.getDriver(), 30);
 		wait.until(ExpectedConditions.textToBePresentInElement(getResultText, expectedText));
 		String actualText = getResultText.getText();
@@ -41,5 +40,4 @@ public class AddToCartTest extends TestBase {
 		Assert.assertEquals(actualText, expectedText, "not match with expected result");
 	}
 
-	
 }
