@@ -21,10 +21,8 @@ public abstract class TestBase {
 			System.setProperty("webdriver.chrome.driver", driverPathForWindows.getPath());
 		}
 		this.driver = new ChromeDriver();
-		 
 
 	}
-	
 
 	@AfterMethod
 	public void cleanUp() {

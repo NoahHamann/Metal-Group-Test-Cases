@@ -10,16 +10,15 @@ public class AddToCartTest extends TestBase {
 	public void canAddMultipleQuantityItemIntoShoppingCart() throws InterruptedException {
 		String expectedText = "Product successfully added to your shopping cart";
 		String quantity = "5";
-		HomePage homePage = new HomePage(this.getDriver());
-		ProductDetailPage pdPage = new ProductDetailPage(this.getDriver());
-		Set setTime = new Set(this.getDriver());
 
-		homePage.navigate();
-		homePage.clickToImage();
-		pdPage.setQuantity(quantity);
-		pdPage.addToCart();
-		setTime.time();
-		String actualText = pdPage.getResultText();
+		new HomePage(this.getDriver())
+		        .navigate()
+		        .clickToImage();
+		String actualText = new ProductDetailPage(this.getDriver())
+				.setQuantity(quantity)
+				.addToCart()
+				.time()
+				.getResultText();
 
 		Assert.assertEquals(actualText, expectedText, "not match with expected result");
 	}

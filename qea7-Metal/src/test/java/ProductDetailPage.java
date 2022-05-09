@@ -1,6 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductDetailPage {
 
@@ -15,27 +17,36 @@ public class ProductDetailPage {
 		driver.navigate().to("http://invenauto.tech/index.php?id_product=1&controller=product");
 	}
 
-	public static void setQuantity(String quantity) {
+	public ProductDetailPage setQuantity(String quantity) {
 		WebElement quantityElement = driver.findElement(By.id("quantity_wanted"));
 		quantityElement.clear();
 		quantityElement.sendKeys(quantity);
+		return this;
 	}
 
-	public static void addToCart() {
+	public ProductDetailPage addToCart() {
 		WebElement addToCart = driver.findElement(By.id("add_to_cart"));
 		addToCart.click();
+		return this;
 	}
 
-	public static String getResultText() {
+	public String getResultText() {
 		WebElement getResultText = driver
 				.findElement(By.xpath("//span[normalize-space()='Product successfully added to your shopping cart']"));
-
-		return getResultText.getText();
+		String text = getResultText.getText();
+		return text;
 	}
 
 	public static By element() {
 		By by = By.xpath("//span[normalize-space()='Product successfully added to your shopping cart']");
 		return by;
+	}
+
+	public ProductDetailPage time() {
+		ProductDetailPage pdPage = new ProductDetailPage(driver);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(pdPage.element()));
+		return this;
 	}
 
 }
