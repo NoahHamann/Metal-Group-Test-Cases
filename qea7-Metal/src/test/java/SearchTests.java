@@ -1,8 +1,5 @@
 import static org.testng.Assert.assertEquals;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import foundation.TestBase;
@@ -14,12 +11,13 @@ public class SearchTests extends TestBase {
 	@Test
 	public void canSearchWithInvalidKeyword() {
 		String expectedSearchResults = "0 results have been found.";
-
-		this.getDriver().get("http://invenauto.tech/index.php");
-		WebElement searchBox = this.getDriver().findElement(By.id("search_query_top"));
-		searchBox.sendKeys("short123456");
-		this.getDriver().findElement(By.cssSelector("button[name='submit_search']")).click();
-		String results = this.getDriver().findElement(By.cssSelector("span[class='heading-counter']")).getText();
+	
+			new HomePage(this.getDriver())
+				.navigate()
+				.enterSearchText("short123456")
+				.clickSearchButton();
+			String results = new SearchResultsPage(this.getDriver())
+				.getSearchResultAmountText();
 
 		assertEquals(expectedSearchResults, results, "Zero results should display");
 	}
@@ -27,15 +25,13 @@ public class SearchTests extends TestBase {
 	@Test
 	public void canSearchWithValidKeyword() {
 		String expectedResultsText = "4 results have been found.";
-
-		this.getDriver().get("http://invenauto.tech/index.php");
-		WebElement searchBox = this.getDriver().findElement(By.id("search_query_top"));
-		searchBox.sendKeys("short");
-		this.getDriver().findElement(By.cssSelector("button[name='submit_search']")).click();
-		Select dropDownSort = new Select(this.getDriver().findElement(By.id("selectProductSort")));
-		dropDownSort.selectByValue("price:asc");
-		String results = this.getDriver().findElement(By.cssSelector("span[class='heading-counter']")).getText();
-
+		String results = new HomePage(this.getDriver())
+			.navigate()
+			.enterSearchText("short")
+			.clickSearchButton()
+			.sortResultsByLowestFirst()
+			.getSearchResultAmountText();
+		
 		assertEquals(expectedResultsText, results);
 	}
 
