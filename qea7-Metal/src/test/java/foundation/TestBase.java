@@ -24,19 +24,16 @@ public abstract class TestBase {
 		}
 		this.driver = new ChromeDriver();
 
-
 	}
-
 
 	@AfterMethod
 	public void cleanUp() {
-
 		if (this.driver != null) {
 			this.driver.quit();
 		}
 	}
 
-	public ChromeDriver getDriver() {
+	protected ChromeDriver getDriver() {
 		return driver;
 	}
 

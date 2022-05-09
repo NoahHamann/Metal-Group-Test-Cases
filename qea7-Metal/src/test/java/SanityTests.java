@@ -1,9 +1,12 @@
 import static org.testng.Assert.assertFalse;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
+import foundation.TestBase;
+
 public class SanityTests extends TestBase {
-	
+
 	@Test
 	public void canLaunchWebdriver() {
 		WebDriver driver = this.getDriver();
