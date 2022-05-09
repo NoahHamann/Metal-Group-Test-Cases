@@ -11,14 +11,13 @@ import foundation.PageObjectBase;
 public class HomePage extends PageObjectBase {
 
 	private static final String URL = "http://invenauto.tech/index.php";
-	private   WebDriver driver;
+	private WebDriver driver;
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
-
 	}
 
-	public  HomePage navigate() {
+	public HomePage navigate() {
 		driver.navigate().to(URL);
 		return this;
 	}
@@ -26,8 +25,6 @@ public class HomePage extends PageObjectBase {
 	public List<WebElement> getAllCategories() {
 		List<WebElement> categoryNames = this.driver
 				.findElements(By.xpath("//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/li"));
-
-
 
 		return categoryNames;
 	}
@@ -52,8 +49,7 @@ public class HomePage extends PageObjectBase {
 		return this;
 	}
 
-
-	public HomePage enterSearchText (String searchText) {
+	public HomePage enterSearchText(String searchText) {
 		WebElement keyword = this.driver.findElement(By.id("search_query_top"));
 		keyword.sendKeys(searchText);
 
@@ -64,7 +60,14 @@ public class HomePage extends PageObjectBase {
 		WebElement buttonElement = this.driver.findElement(By.name("submit_search"));
 		buttonElement.click();
 
-		return new SearchResultsPage(this.getDriver());
+		return new SearchResultsPage(this.driver);
+	}
+
+	public LoginPage clickSignInButton() {
+		WebElement signInButton = this.driver.findElement(By.linkText("Sign in"));
+		signInButton.click();
+
+		return new LoginPage(this.driver);
 	}
 
 }

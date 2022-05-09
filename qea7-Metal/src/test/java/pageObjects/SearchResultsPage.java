@@ -11,8 +11,6 @@ public class SearchResultsPage extends PageObjectBase {
 
 	public SearchResultsPage(WebDriver driver) {
 		this.driver = driver;
-
-		//super(driver);
 	}
 
 	public String getHeaderText() {

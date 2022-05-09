@@ -1,36 +1,53 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.Test;
 
 import foundation.TestBase;
+import pageObjects.AccountPage;
+import pageObjects.HomePage;
+import pageObjects.LoginPage;
 
 public class LoginTests extends TestBase {
-	WebDriverWait wait;
+	//WebDriverWait wait;
 
 	@Test
 	public void canLogIntoAccount() {
+		String emailText = "fake_email@gmail.com";
+		String passwordText = "Abcd1234";
+		String expectedHeaderText = "my account";
 
-		this.getDriver().manage().window().maximize();
-		this.getDriver().get("http://invenauto.tech/index.php");
+		//this.getDriver().manage().window().maximize();
+		//this.getDriver().get("http://invenauto.tech/index.php");
+		HomePage homePage = new HomePage(this.getDriver());
+		homePage.navigate();
+		homePage.clickSignInButton();
+		//WebElement signIn = this.getDriver().findElement(By.linkText("Sign in"));
+		//signIn.click();
+		LoginPage loginPage = new LoginPage(this.getDriver());
+		loginPage.enterEmailText(emailText);
+		loginPage.enterPasswordText(passwordText);
+		loginPage.clickLoginButton();
+		AccountPage accountPage = new AccountPage(this.getDriver());
+		//String currentUrl = this.getDriver().getCurrentUrl();
 
-		WebElement signIn = this.getDriver().findElement(By.linkText("Sign in"));
-		signIn.click();
+		assertEquals(accountPage.getAccountHeaderText(), expectedHeaderText, "current url should match actual url of AccountPage.");
 
-		WebElement username = this.getDriver().findElement(By.id("email"));
+		//WebElement signIn = this.getDriver().findElement(By.linkText("Sign in"));
+		//signIn.click();
 
-		WebElement password = this.getDriver().findElement(By.id("passwd"));
+		//WebElement username = this.getDriver().findElement(By.id("email"));
 
-		WebElement login = this.getDriver().findElement(By.id("SubmitLogin"));
+		//WebElement password = this.getDriver().findElement(By.id("passwd"));
 
-		username.sendKeys("fake_email@gmail.com");
-		password.sendKeys("Abcd1234");
-		login.click();
+		//WebElement login = this.getDriver().findElement(By.id("SubmitLogin"));
 
-		String actualUrl = "http://invenauto.tech/index.php?controller=my-account";
-		String expectedUrl = this.getDriver().getCurrentUrl();
-		Assert.assertEquals(actualUrl, expectedUrl, "Exepcted post-login and actual post-login URL's do not match.");
+		//username.sendKeys("fake_email@gmail.com");
+		//password.sendKeys("Abcd1234");
+		//login.click();
+
+		//String actualUrl = "http://invenauto.tech/index.php?controller=my-account";
+		//String expectedUrl = this.getDriver().getCurrentUrl();
+		//Assert.assertEquals(actualUrl, expectedUrl, "Exepcted post-login and actual post-login URL's do not match.");
 
 	}
 
