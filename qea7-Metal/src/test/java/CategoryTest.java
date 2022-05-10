@@ -3,6 +3,9 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+import foundation.TestBase;
+import pageObjects.HomePage;
+
 public class CategoryTest extends TestBase {
 
 	@Test

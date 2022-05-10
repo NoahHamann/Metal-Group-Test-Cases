@@ -3,6 +3,9 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import foundation.TestBase;
+import pageObjects.HomePage;
+import pageObjects.ProductDetailPage;
 public class AddToCartTest extends TestBase {
 	WebDriver driver;
 
