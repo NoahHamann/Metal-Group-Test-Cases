@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import foundation.PageObjectBase;
 
-public class LoginPage extends PageObjectBase{
+public class LoginPage extends PageObjectBase {
 
 	private WebDriver driver;
 
@@ -14,14 +14,14 @@ public class LoginPage extends PageObjectBase{
 		this.driver = driver;
 	}
 
-	public LoginPage enterEmailText (String emailText) {
+	public LoginPage enterEmailText(String emailText) {
 		WebElement email = this.driver.findElement(By.id("email"));
 		email.sendKeys(emailText);
 
 		return this;
 	}
 
-	public LoginPage enterPasswordText (String passwordText) {
+	public LoginPage enterPasswordText(String passwordText) {
 		WebElement password = this.driver.findElement(By.id("passwd"));
 		password.sendKeys(passwordText);
 

@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import foundation.PageObjectBase;
 
 public class AccountPage extends PageObjectBase {
-	private static final String URL = "http://invenauto.tech/index.php?controller=my-account";
 	private WebDriver driver;
 
 	public AccountPage(WebDriver driver) {

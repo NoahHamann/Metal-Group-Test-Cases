@@ -49,6 +49,13 @@ public class HomePage extends PageObjectBase {
 		return this;
 	}
 
+	public ProductDetailPage clickBlouseImage() {
+		WebElement blouse = this.driver.findElement(By.linkText("Blouse"));
+		blouse.click();
+
+		return new ProductDetailPage(this.driver);
+	}
+
 	public HomePage enterSearchText(String searchText) {
 		WebElement keyword = this.driver.findElement(By.id("search_query_top"));
 		keyword.sendKeys(searchText);

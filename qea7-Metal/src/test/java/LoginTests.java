@@ -8,7 +8,6 @@ import pageObjects.HomePage;
 import pageObjects.LoginPage;
 
 public class LoginTests extends TestBase {
-	//WebDriverWait wait;
 
 	@Test
 	public void canLogIntoAccount() {
@@ -25,8 +24,8 @@ public class LoginTests extends TestBase {
 		loginPage.clickLoginButton();
 		AccountPage accountPage = new AccountPage(this.getDriver());
 
-		assertEquals(accountPage.getAccountHeaderText(), expectedHeaderText, "expected header text and account header text should match.");
-
+		assertEquals(accountPage.getAccountHeaderText(), expectedHeaderText,
+				"expected header text and account header text should match.");
 
 	}
 
