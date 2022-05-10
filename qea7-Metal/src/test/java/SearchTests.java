@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import foundation.TestBase;
 import pageObjects.HomePage;
-import pageObjects.SearchResultsPage;
+
 
 public class SearchTests extends TestBase {
 
@@ -12,11 +12,10 @@ public class SearchTests extends TestBase {
 	public void canSearchWithInvalidKeyword() {
 		String expectedSearchResults = "0 results have been found.";
 	
-			new HomePage(this.getDriver())
+		String results = new HomePage(this.getDriver())
 				.navigate()
 				.enterSearchText("short123456")
-				.clickSearchButton();
-			String results = new SearchResultsPage(this.getDriver())
+				.clickSearchButton()
 				.getSearchResultAmountText();
 
 		assertEquals(expectedSearchResults, results, "Zero results should display");
