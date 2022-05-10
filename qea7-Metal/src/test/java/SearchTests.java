@@ -39,12 +39,11 @@ public class SearchTests extends TestBase {
 	public void canSearchUsingSearchText() {
 		String searchText = "t-shirts";
 
-		HomePage homePage = new HomePage(this.getDriver());
-		homePage.navigate();
-		homePage.enterSearchText(searchText);
-		homePage.clickSearchButton();
-		SearchResultsPage searchResultsPage = new SearchResultsPage(this.getDriver());
-		String headerText = searchResultsPage.getHeaderText();
+		String headerText = new HomePage(this.getDriver())
+			.navigate()
+			.enterSearchText(searchText)
+			.clickSearchButton()
+			.getHeaderText();
 
 		assertEquals(headerText, searchText, "header text should match search text.");
 	}
