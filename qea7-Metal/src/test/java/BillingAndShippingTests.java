@@ -25,12 +25,6 @@ public class BillingAndShippingTests extends TestBase {
 		String expectedPaymentHeaderText = "please choose your payment method\n"
 				+ "your shopping cart contains: 7 products";
 
-		// this.getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		// this.getDriver().manage().window().maximize();
-		// this.getDriver().get("http://invenauto.tech/index.php");
-
-		// WebElement blouse = this.getDriver().findElement(By.linkText("Blouse"));
-		// blouse.click();
 		HomePage homePage = new HomePage(this.getDriver());
 		homePage.navigate();
 		homePage.clickBlouseImage();
