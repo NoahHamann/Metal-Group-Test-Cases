@@ -17,10 +17,11 @@ public class AddToCartTest extends TestBase {
 		new HomePage(this.getDriver())
 		        .navigate()
 		        .clickToImage();
+		
 		String actualText = new ProductDetailPage(this.getDriver())
 				.setQuantity(quantity)
 				.addToCart()
-				.time()
+				.addTime()
 				.getResultText();
 
 		Assert.assertEquals(actualText, expectedText, "not match with expected result");

@@ -12,6 +12,8 @@ import foundation.PageObjectBase;
 public class ProductDetailPage extends PageObjectBase {
 
 	private static WebDriver driver;
+	final static By elementForSuccessResult = By.xpath("//span[normalize-space()='Product successfully added to your shopping cart']");
+    final static  String URL = "http://invenauto.tech/index.php?id_product=1&controller=product";
 
 	public ProductDetailPage(WebDriver driver) {
 		this.driver = driver;
@@ -19,7 +21,7 @@ public class ProductDetailPage extends PageObjectBase {
 	}
 
 	public static void navigate() {
-		driver.navigate().to("http://invenauto.tech/index.php?id_product=1&controller=product");
+		driver.navigate().to(URL);
 	}
 
 	public ProductDetailPage setQuantity(String quantity) {
@@ -37,20 +39,16 @@ public class ProductDetailPage extends PageObjectBase {
 
 	public String getResultText() {
 		WebElement getResultText = driver
-				.findElement(By.xpath("//span[normalize-space()='Product successfully added to your shopping cart']"));
+				.findElement(elementForSuccessResult);
 		String text = getResultText.getText();
 		return text;
 	}
 
-	public static By element() {
-		By by = By.xpath("//span[normalize-space()='Product successfully added to your shopping cart']");
-		return by;
-	}
 
-	public ProductDetailPage time() {
+	public ProductDetailPage addTime() {
 		ProductDetailPage pdPage = new ProductDetailPage(driver);
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(pdPage.element()));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(elementForSuccessResult));
 		return this;
 	}
 
