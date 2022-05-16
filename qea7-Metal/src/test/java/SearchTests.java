@@ -11,10 +11,11 @@ public class SearchTests extends TestBase {
 	@Test
 	public void canSearchWithInvalidKeyword() {
 		String expectedSearchResults = "0 results have been found.";
+		String searchText = "short123456";
 	
 		String results = new HomePage(this.getDriver())
 				.navigate()
-				.enterSearchText("short123456")
+				.enterSearchText(searchText)
 				.clickSearchButton()
 				.getSearchResultAmountText();
 
@@ -24,9 +25,11 @@ public class SearchTests extends TestBase {
 	@Test
 	public void canSearchWithValidKeyword() {
 		String expectedResultsText = "4 results have been found.";
+		String searchText = "short";
+		
 		String results = new HomePage(this.getDriver())
 			.navigate()
-			.enterSearchText("short")
+			.enterSearchText(searchText)
 			.clickSearchButton()
 			.sortResultsByLowestFirst()
 			.getSearchResultAmountText();
