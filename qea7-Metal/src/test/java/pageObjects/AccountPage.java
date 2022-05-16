@@ -19,9 +19,7 @@ public class AccountPage extends PageObjectBase {
 		String accountHeaderTextCleaned = accountHeaderText.replace("\"","").toLowerCase();
 
 		return accountHeaderTextCleaned;
-		//driver.get(URL);
 
-		//return this;
 	}
 
 }

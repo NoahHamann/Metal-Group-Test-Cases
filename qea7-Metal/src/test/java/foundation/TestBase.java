@@ -12,14 +12,16 @@ public abstract class TestBase {
 
 	@BeforeMethod
 	public void launchDriver() {
-		URL driverPathForWindows = getClass().getResource("windows/chromedriver.exe");
-		URL driverPathPathForMac = getClass().getResource("mac/chromedriver");
 		String os = System.getProperty("os.name").toLowerCase();
 
 		if (os.contains("mac")) {
+			URL driverPathPathForMac = getClass().getResource("mac/chromedriver");
+
 			System.setProperty("webdriver.chrome.driver", driverPathPathForMac.getPath());
 		}
 		if (os.contains("windows")) {
+			URL driverPathForWindows = getClass().getResource("windows/chromedriver.exe");
+
 			System.setProperty("webdriver.chrome.driver", driverPathForWindows.getPath());
 		}
 		this.driver = new ChromeDriver();

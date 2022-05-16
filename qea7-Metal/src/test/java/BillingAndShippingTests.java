@@ -26,38 +26,38 @@ public class BillingAndShippingTests extends TestBase {
 				+ "your shopping cart contains: 7 products";
 
 		HomePage homePage = new HomePage(this.getDriver());
-		homePage.navigate();
-		homePage.clickBlouseImage();
+		homePage.navigate()
+		.clickBlouseImage();
 		ProductDetailPage productDetailPage = new ProductDetailPage(this.getDriver());
-		productDetailPage.setQuantity(quantity);
-		productDetailPage.selectSize(size);
-		productDetailPage.selectColor(color);
-		productDetailPage.addBlouseToCart();
-		productDetailPage.proceedToCheckout();
+		productDetailPage.setQuantity(quantity)
+		.selectSize(size)
+		.selectColor(color)
+		.addToCart()
+		.proceedToCheckout();
 		CheckoutPage checkoutPage = new CheckoutPage(this.getDriver());
-		checkoutPage.confirmShoppingCartSummary();
-		checkoutPage.enterEmailTextAtCheckout(emailText);
-		checkoutPage.enterPasswordTextAtCheckout(passwordText);
-		checkoutPage.clickLoginButtonAtCheckout();
+		checkoutPage.proceedToCheckout()
+		.enterEmailTextAtCheckout(emailText)
+		.enterPasswordTextAtCheckout(passwordText)
+		.clickLoginButtonAtCheckout();
 
 		String enterAddressUrl = "http://invenauto.tech/index.php?controller=address&back=order.php%3Fstep%3D1&id_address=136";
 		String currentUrl = this.getDriver().getCurrentUrl();
 
 		if (enterAddressUrl == currentUrl) {
 
-			checkoutPage.enterPrimaryAddress(primaryAddress);
-			checkoutPage.enterCity(city);
-			checkoutPage.selectState(state);
-			checkoutPage.enterZipCode(zipCode);
-			checkoutPage.enterPhone(phone);
-			checkoutPage.enterAddressTitle(addressTitle);
-			checkoutPage.confirmAddress();
+			checkoutPage.enterPrimaryAddress(primaryAddress)
+			.enterCity(city)
+			.selectState(state)
+			.enterZipCode(zipCode)
+			.enterPhone(phone)
+			.enterAddressTitle(addressTitle)
+			.confirmAddress();
 		} else {
 			checkoutPage.processAddress();
 		}
 
-		checkoutPage.agreeToTermsAndConditions();
-		checkoutPage.processCarrier();
+		checkoutPage.agreeToTermsAndConditions()
+		.processCarrier();
 
 		assertEquals(checkoutPage.getPaymentHeaderText(), expectedPaymentHeaderText,
 				"Exepcted payment and actual payment headers should match.");

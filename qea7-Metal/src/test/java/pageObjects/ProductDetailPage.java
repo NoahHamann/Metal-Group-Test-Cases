@@ -12,8 +12,9 @@ import foundation.PageObjectBase;
 public class ProductDetailPage extends PageObjectBase {
 
 	private static WebDriver driver;
-	final static By elementForSuccessResult = By.xpath("//span[normalize-space()='Product successfully added to your shopping cart']");
-    final static  String URL = "http://invenauto.tech/index.php?id_product=1&controller=product";
+	final static By elementForSuccessResult = By
+			.xpath("//span[normalize-space()='Product successfully added to your shopping cart']");
+	final static String URL = "http://invenauto.tech/index.php?id_product=1&controller=product";
 
 	public ProductDetailPage(WebDriver driver) {
 		this.driver = driver;
@@ -32,18 +33,16 @@ public class ProductDetailPage extends PageObjectBase {
 	}
 
 	public ProductDetailPage addToCart() {
-		WebElement addToCart = driver.findElement(By.id("add_to_cart"));
+		WebElement addToCart = driver.findElement(By.name("Submit"));
 		addToCart.click();
 		return this;
 	}
 
 	public String getResultText() {
-		WebElement getResultText = driver
-				.findElement(elementForSuccessResult);
+		WebElement getResultText = driver.findElement(elementForSuccessResult);
 		String text = getResultText.getText();
 		return text;
 	}
-
 
 	public ProductDetailPage addTime() {
 		ProductDetailPage pdPage = new ProductDetailPage(driver);
@@ -69,12 +68,6 @@ public class ProductDetailPage extends PageObjectBase {
 	public ProductDetailPage selectColor(String color) {
 		WebElement productColor = driver.findElement(By.name(color));
 		productColor.click();
-		return this;
-	}
-
-	public ProductDetailPage addBlouseToCart() {
-		WebElement addToCart = driver.findElement(By.name("Submit"));
-		addToCart.click();
 		return this;
 	}
 

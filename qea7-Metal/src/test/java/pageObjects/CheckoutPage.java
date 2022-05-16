@@ -17,7 +17,7 @@ public class CheckoutPage extends PageObjectBase {
 		this.driver = driver;
 	}
 
-	public CheckoutPage confirmShoppingCartSummary() {
+	public CheckoutPage proceedToCheckout() {
 		WebElement checkout = this.driver.findElement(By.partialLinkText("Proceed to checkout"));
 		checkout.click();
 
