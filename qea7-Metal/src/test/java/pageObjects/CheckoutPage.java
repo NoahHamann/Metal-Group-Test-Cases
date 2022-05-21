@@ -133,4 +133,34 @@ public class CheckoutPage extends PageObjectBase {
 		return paymentHeaderTextCleaned;
 	}
 
+	public CheckoutPage clickPayByBank() {
+		//[class='bankwire']
+		WebElement payBank = this.driver.findElement(By.cssSelector("[class='bankwire']"));
+		payBank.click();
+
+		return this;
+	}
+
+	public CheckoutPage submit() {
+		// [id='cart_navigation'] [type='submit']
+		WebElement submit = this.driver.findElement(By.cssSelector("[id='cart_navigation'] [type='submit']"));
+		submit.click();
+
+		return this;
+	}
+
+	public CheckoutPage proceedToCheckoutInAddressPage() {
+		 
+		WebDriverWait wait = new WebDriverWait(this.driver, 30);
+		WebElement clickToCheckoutButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[name='processAddress']")));
+		clickToCheckoutButton.click();
+		return this;
+	}
+
+	public String getText() {
+		WebElement text = this.driver.findElement(By.cssSelector("[class='alert alert-success']"));
+		return text.getText();
+	}
+
 }
