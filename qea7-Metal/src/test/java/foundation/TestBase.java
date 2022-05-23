@@ -1,6 +1,7 @@
 package foundation;
 
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -25,6 +26,7 @@ public abstract class TestBase {
 			System.setProperty("webdriver.chrome.driver", driverPathForWindows.getPath());
 		}
 		this.driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 	}
 

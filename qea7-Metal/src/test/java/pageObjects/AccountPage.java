@@ -19,7 +19,11 @@ public class AccountPage extends PageObjectBase {
 		String accountHeaderTextCleaned = accountHeaderText.replace("\"","").toLowerCase();
 
 		return accountHeaderTextCleaned;
-
+	}
+	
+	public String getRegistrationSuccess() {
+		WebElement successAlert = this.driver.findElement(By.xpath("//div[@id=\"center_column\"]/p"));
+		return successAlert.getText();
 	}
 
 }

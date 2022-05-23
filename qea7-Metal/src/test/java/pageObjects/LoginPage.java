@@ -13,9 +13,21 @@ public class LoginPage extends PageObjectBase {
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 	}
+	
+	public LoginPage navigate() {
+		this.driver.get("http://invenauto.tech/index.php?controller=authentication&back=my-account");
+		return this;
+	}
 
 	public LoginPage enterEmailText(String emailText) {
 		WebElement email = this.driver.findElement(By.id("email"));
+		email.sendKeys(emailText);
+
+		return this;
+	}
+	
+	public LoginPage enterEmailInCreateAccount(String emailText) {
+		WebElement email = this.driver.findElement(By.id("email_create"));
 		email.sendKeys(emailText);
 
 		return this;
@@ -33,6 +45,12 @@ public class LoginPage extends PageObjectBase {
 		loginButton.click();
 
 		return new AccountPage(this.driver);
+	}
+	
+	public RegistrationPage clickCreateAccountButton() {
+		WebElement createAccountButton = this.driver.findElement(By.id("SubmitCreate"));
+		createAccountButton.click();
+		return new RegistrationPage(this.driver);
 	}
 
 }
