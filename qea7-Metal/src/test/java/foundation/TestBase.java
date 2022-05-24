@@ -28,7 +28,7 @@ public abstract class TestBase {
 		this.driver = new ChromeDriver();
 
 		this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        this.driver.manage().window().maximize();
+       		this.driver.manage().window().maximize();
 	}
 
 	@AfterMethod
